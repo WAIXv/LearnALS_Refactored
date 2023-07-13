@@ -1,0 +1,22 @@
+{
+	"FileVersion": 3,
+	"EngineAssociation": "{E2897837-4BA8-E3B8-04CD-479C8CF6BE3E}",
+	"Category": "",
+	"Description": "",
+	"Modules": [
+		{
+			"Name": "LearnALS_Refactored",
+			"Type": "Runtime",
+			"LoadingPhase": "Default"
+		}
+	],
+	"Plugins": [
+		{
+			"Name": "ModelingToolsEditorMode",
+			"Enabled": true,
+			"TargetAllowList": [
+				"Editor"
+			]
+		}
+	]
+}

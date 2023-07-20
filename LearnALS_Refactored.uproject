@@ -1,13 +1,16 @@
 {
 	"FileVersion": 3,
-	"EngineAssociation": "{E2897837-4BA8-E3B8-04CD-479C8CF6BE3E}",
+	"EngineAssociation": "{99122973-411A-FF5E-8C90-10925328943E}",
 	"Category": "",
 	"Description": "",
 	"Modules": [
 		{
 			"Name": "LearnALS_Refactored",
 			"Type": "Runtime",
-			"LoadingPhase": "Default"
+			"LoadingPhase": "Default",
+			"AdditionalDependencies": [
+				"ALSCamera"
+			]
 		}
 	],
 	"Plugins": [

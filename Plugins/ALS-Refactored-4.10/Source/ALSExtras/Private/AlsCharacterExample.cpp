@@ -66,18 +66,34 @@ void AAlsCharacterExample::SetupPlayerInputComponent(UInputComponent* Input)
 
 void AAlsCharacterExample::InputLookMouse(const FInputActionValue& ActionValue)
 {
+	const auto Value{ActionValue.Get<FVector2D>()};
+	
+	AddControllerYawInput(Value.X * LookRightMouseSensitivity);
+	AddControllerPitchInput(Value.Y * LookUpMouseSensitivity);
 }
 
 void AAlsCharacterExample::InputLook(const FInputActionValue& ActionValue)
 {
+	const auto Value{ActionValue.Get<FVector2D>()};
+	
+	AddControllerYawInput(Value.X * LookRightRate * GetWorld()->GetDeltaSeconds());
+	AddControllerPitchInput(Value.Y * LookUpRate * GetWorld()->GetDeltaSeconds());
 }
 
 void AAlsCharacterExample::InputMove(const FInputActionValue& ActionValue)
 {
+	const auto Value{ActionValue.Get<FVector2D>()};
+
+	//TODO: 用 ViewInfo.Yaw 计算方向
+	const auto ForwardDirection{GetActorForwardVector()};
+	const auto RightDirection{GetActorRightVector()};
+	
+	AddMovementInput(ForwardDirection * Value.Y + RightDirection * Value.X);
 }
 
 void AAlsCharacterExample::InputSprint(const FInputActionValue& ActionValue)
 {
+	
 }
 
 void AAlsCharacterExample::InputWalk()
